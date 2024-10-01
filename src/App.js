@@ -3,7 +3,7 @@ import "./App.css";
 
 const App = () => {
   const [data, setData] = useState([]);
-  console.log(data);
+  // console.log(data);
 
   const fetchData = async () => {
     try {
@@ -16,7 +16,7 @@ const App = () => {
       const data = await response.json();
       setData(data);
     } catch (error) {
-      console.log(error);
+      console.log(`Error fetching data: ${error}`);
     }
   };
 
@@ -28,7 +28,7 @@ const App = () => {
     <div className="container">
       {data.map((ele, index) => (
         <div key={index} className="card">
-          <img alt="" src={ele.flag}></img>
+          <img height="120px" width="150px" alt={ele.name} src={ele.flag} />
           <h1>{ele.name}</h1>
         </div>
       ))}
