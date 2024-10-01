@@ -9,11 +9,9 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://xcountries-backend.azurewebsites.net/all"
+          "https://xcountries-backend.azurewebsites.net/all1"
         );
-        if (!response.ok) {
-          throw new Error("Network response was not ok.");
-        }
+
         const data = await response.json();
         setData(data);
       } catch (error) {
