@@ -15,7 +15,7 @@ const App = () => {
         const data = await response.json();
         setData(data);
       } catch (error) {
-        console.error(`Error fetching data: ${error.message}`);
+        console.log(`Error fetching data: ${error}`);
       }
     };
     fetchData();
