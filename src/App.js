@@ -9,7 +9,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://xcountries-backend.azurewebsites.net/all1"
+          "https://xcountries-backend.azurewebsites.net/all"
         );
 
         const data = await response.json();
