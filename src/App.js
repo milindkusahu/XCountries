@@ -5,22 +5,21 @@ const App = () => {
   const [data, setData] = useState([]);
   // console.log(data);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        "https://xcountries-backend.azurewebsites.net/all"
-      );
-      if (!response.ok) {
-        throw new Error("Network response was not ok.");
-      }
-      const data = await response.json();
-      setData(data);
-    } catch (error) {
-      console.log(`Error fetching data: ${error}`);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://xcountries-backend.azurewebsites.net/all"
+        );
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+        const data = await response.json();
+        setData(data);
+      } catch (error) {
+        console.log(`Error fetching data: ${error}`);
+      }
+    };
     fetchData();
   }, []);
 
